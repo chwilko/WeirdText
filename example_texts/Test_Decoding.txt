@@ -1,0 +1,6 @@
+For decoding composite text, first do a simple check whether the text looks like composite
+output of your encoder. If not, raise some reasonable exception.
+Then, use the encoded text and the words list to decode the text.
+Your decoded output should, as far as possible, be identical to the original text. In case of
+ambiguities (some encoded word could have been multiple original words), decoding
+errors are acce

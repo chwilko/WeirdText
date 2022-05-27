@@ -37,6 +37,8 @@ def test_To_code():
 def test_Decode_and_encode():
     texts = os.listdir(example_texts)
     for file_text in texts:
+        if file_text.count("Test") != 1 or file_text.index("Test") != 0:
+            continue
         with open(os.sep.join([example_texts, file_text]), "r") as f:
             text = f.read()
         assert text == decode(encode(text))        

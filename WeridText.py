@@ -194,7 +194,7 @@ def decode(text, text_sep = '\n—weird—\n', separators_only = None):
 
 if __name__ == "__main__":
     example_texts = "example_texts"
-    text_file = "text_from_task.txt"
+    text_file = "Test_from_task.txt"
     with open(os.sep.join([example_texts, text_file]), "r") as f:
         text = f.read()
 
