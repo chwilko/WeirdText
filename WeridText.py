@@ -4,6 +4,16 @@ from string import whitespace, punctuation
 
 
 def constants_index(text, separators_only = whitespace + punctuation):
+    """Function return index first mark with separator_only in text.
+    If in text is not mark with separator_only then return -1
+
+    Args:
+        text (string): text in wich search mark with separator_only
+        separators_only (string, optional): string of marks. Defaults to whitespace+punctuation.
+
+    Returns:
+        int: index first mark with separator_only in text
+    """    
     index = -1
     for space in separators_only:
         try:
@@ -18,6 +28,17 @@ def constants_index(text, separators_only = whitespace + punctuation):
     return index
 
 def shuffle_word(word):
+    """Function shuffled word in this way, so first and last word are constant,
+    but the remaining have to be other order. 
+
+
+    Args:
+        word (string): One word, this word has to be 
+            longer than 3 marks and middle letters mustn't be identical.
+
+    Returns:
+        string: Word shufled in special way 
+    """    
     last = word[-1]
     first = word[0]
     mid_word = [i for i in word[1:-1]]
@@ -26,21 +47,52 @@ def shuffle_word(word):
     return first + "".join(mid_word) + last
 
 def repair_word(word, words):
-    for i, wd in enumerate(words):
+    """ Function find and return word from words
+    with the same pattern like word and remove this word from words.
+    Two words have the same pattern if first and last letter are identically
+    and the remaining are the same, but in other order.
+
+
+    Args:
+        word (string): Shuffled word to repair
+        words (list of string): list of words
+
+    Raises:
+        AttributeError: When in words is not pattern to word.
+
+    Returns:
+        string: string from words with the same pattern like word.
+    """    
+    for wd in words:
         if word[0] != wd[0]:
             continue
         if len(word) != len(wd):
             continue
         if word[-1] != wd[-1]:
             continue
+        if word == wd:
+            continue
+        ct = False
         for letter in word[1:-1]:
-            if not letter in wd:
-                continue
+            if not letter in wd[1:-1]:
+                ct = True
+                break
+        if ct:
+            continue
         words.remove(wd)
         return wd
     raise AttributeError("Have not found matching word. Bad template!")
 
 def to_code(word):
+    """ Function check word is good to encode and decode.
+        Property required in repair_word
+
+    Args:
+        word (string): word
+
+    Returns:
+        bool: True if word is good to encode and decode. False in opposed case
+    """    
     if len(word) < 4:
         return False
     word = word[1:-1]
@@ -50,6 +102,18 @@ def to_code(word):
     return False
 
 def encode(text, text_sep = '\n—weird—\n', separators_only = None):
+    """ Function encode text.
+        Whitespace and punctuation is not encode.
+        Word is not encode if is shorter than 4 or letters between first and last are identically.
+        Encode is that first and last letter stay, and remaining letters are shuffled,
+        that new word is other than old.
+    Args:
+        text (string): Some text.
+        text_sep (str, optional): text at the beginning encoded word and between encoded text and encoded words. Defaults to '\n—weird—\n'.
+        separators_only (string, optional): whitespace and punctuation if require . Defaults to string.whitespace + string.punctuation.
+    Returns:
+        string: encoded text
+    """    
     if separators_only is None:
         separators_only = whitespace + punctuation
     encod = text_sep
@@ -75,7 +139,23 @@ def encode(text, text_sep = '\n—weird—\n', separators_only = None):
     encod += word + text_sep + " ".join(words)
     return encod
 
-def decode(text, text_sep = '\n—weird—\n', separators_only = None):
+def decode(text, text_sep = '\n—weird—\n', separators_only = None):    
+    """ Function encode text.
+        Whitespace and punctuation is not encode.
+        Word is not encode if is shorter than 4 or letters between first and last are identically.
+        Encode is that first and last letter stay, and remaining letters are shuffled,
+        that new word is other than old.
+    Args:
+        text (string): Some encoded text.
+        text_sep (str, optional): text at the beginning encoded word and between encoded text and encoded words the same like in encode. Defaults to '\n—weird—\n'.
+        separators_only (string, optional): whitespace and punctuation if require . Defaults to string.whitespace + string.punctuation.
+    
+    Raises:
+        ValueError: if is bad pattern of text.
+    
+    Returns:
+        string: decoded text
+    """    
     if text.count(text_sep) != 2:
         raise ValueError("Bad text to decode")
 
