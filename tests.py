@@ -5,11 +5,11 @@ example_texts = "example_texts"
 
 
 def test_Constants_index():
-    assert -1 == constants_index("asdasd")
-    assert 0 == constants_index(" asdasd")
-    assert 1 == constants_index("a\nsdasd")
-    assert 4 == constants_index("asda{}sd")
-    assert -1 == constants_index("asdasd ")
+    assert -1 == constants_index("Graal")
+    assert 0 == constants_index(" Lancelot")
+    assert 4 == constants_index("king\nArtur")
+    assert 5 == constants_index("Parsi{}val")
+    assert 15 == constants_index("HolyHandGrenade ")
 
 def test_Shuffle_world():
     world = "Parrot"

@@ -7,7 +7,10 @@ def constants_index(text, separators_only = whitespace + punctuation):
     index = -1
     for space in separators_only:
         try:
-            current = text[:index].index(space)
+            if index == -1:
+                current = text.index(space)
+            else:
+                current = text[:index].index(space)
             if index == -1 or current < index:
                 index = current
         except ValueError:
