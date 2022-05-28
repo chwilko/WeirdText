@@ -1,1 +1,1 @@
-web:gunicorn chwilko.wsgi
+web:gunicorn chwilko.chwilko.wsgi
