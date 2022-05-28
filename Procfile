@@ -1,0 +1,1 @@
+web:gunicorn chwilko.wsgi
