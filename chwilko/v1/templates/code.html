@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Encode Page </h1>
+<form action="encode">
+    Enter text to encode : 
+    <br><textarea name="text_to_encode" style="width:250px;height:150px;"></textarea><br>
+    <input type="submit">
+</form>
+<br>
+<form action="decode">
+    Enter text to decode : 
+    <br><textarea name="text_to_decode" style="width:250px;height:150px;"></textarea><br>
+    <input type="submit">
+</form>
+{% endblock %}

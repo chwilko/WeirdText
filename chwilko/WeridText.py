@@ -1,5 +1,5 @@
 import os
-from numpy.random import shuffle
+from random import shuffle
 from string import whitespace, punctuation
 
 
@@ -201,6 +201,8 @@ if __name__ == "__main__":
     print(encode(text))
     print("____________________________________")
     print(decode(encode(text)))
+    print("____________________________________")
+    print(decode(encode(decode(encode(text)))))
         
 
 

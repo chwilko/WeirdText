@@ -1,5 +1,5 @@
 # import pytest
-from WeridText import *
+from chwilko.WeridText import *
 import os
 example_texts = "example_texts"
 
