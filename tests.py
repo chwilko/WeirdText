@@ -1,5 +1,5 @@
 # import pytest
-from chwilko.WeridText import *
+from WeirdText import *
 import os
 example_texts = "example_texts"
 
