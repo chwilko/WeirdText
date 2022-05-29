@@ -26,14 +26,14 @@ source django/bin/activate
 cd WeirdText/
 
 # install required dependence
-python3 -m pip install django whitenoise pytest
+pip install -r requirements.txt
 
 ```
 
 ## Usage
 
 ```bash
-#type in bash
+# type in bash
 python3 manage.py runserver
 ```
 
