@@ -4,7 +4,7 @@ App is wrote in framework django.
 ## Heroku API
 link to heroku API:
 [test-ulamlab.herokuapp.com](test-ulamlab.herokuapp.com)
-<!-- test-ulamlab.herokuapp.com -->
+
 ### Author
 Bartłomiej Chwiłkowski (github: chwilko)
 
@@ -16,11 +16,14 @@ Bartłomiej Chwiłkowski (github: chwilko)
 # clone from github
 git clone https://github.com/chwilko/WeirdText.git
 
+# install Virtualenv
+sudo apt install python3-virtualenv
+
 #make virtualenv
-virtualenv django
+virtualenv WeirdTextAPP
 
 # go to virtualenv
-source django/bin/activate
+source WeirdTextAPP/bin/activate
 
 # chancge current directory
 cd WeirdText/
