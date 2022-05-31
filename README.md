@@ -1,6 +1,6 @@
 # UlamLab_Test
-Recruiting task for Ulam Lab Intern. Encoder and Decoder.
-App is wrote in framework django.
+Recruiting task for Ulam Lab Intern. Encoder and Decoder of Weird Text.
+The app is written in framework django.
 ## Heroku API
 link to heroku API:
 [test-ulamlab.herokuapp.com](https://test-ulamlab.herokuapp.com)
