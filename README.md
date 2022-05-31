@@ -5,6 +5,11 @@ App is wrote in framework django.
 link to heroku API:
 [test-ulamlab.herokuapp.com](https://test-ulamlab.herokuapp.com)
 
+## CirceCi project
+[app.circleci.com/pipelines/github/chwilko/WeirdText](https://app.circleci.com/pipelines/github/chwilko/WeirdText)
+project id:
+cd143c77-1f92-4beb-b581-79a45fb531d9
+
 ### Author
 Bartłomiej Chwiłkowski (github: chwilko)
 
