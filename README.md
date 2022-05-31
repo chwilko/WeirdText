@@ -3,7 +3,7 @@ Recruiting task for Ulam Lab Intern. Encoder and Decoder.
 App is wrote in framework django.
 ## Heroku API
 link to heroku API:
-[test-ulamlab.herokuapp.com](test-ulamlab.herokuapp.com)
+[test-ulamlab.herokuapp.com](https://test-ulamlab.herokuapp.com)
 
 ### Author
 Bartłomiej Chwiłkowski (github: chwilko)
