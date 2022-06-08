@@ -166,7 +166,6 @@ def decode(text, text_sep = '\n-weird-\n', separators_only = None):
     m = 0
     i = 0
     while text[m:].count(text_sep) > 0:
-        print(i)
         i += 1
         m += text[m:].index(text_sep) + len(text_sep)
     m -= len(text_sep)
